@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Proposta Digital | Brum Intelligence</title>
+    <title>Proposta Comercial | Brum Intelligence</title>
     
     <!-- Fontes e Ícones -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -33,126 +33,87 @@
         body {
             background-color: var(--bg-light);
             color: var(--text-dark);
-            display: flex;
             min-height: 100vh;
+            padding-bottom: 4rem;
         }
 
-        /* Sidebar */
-        .sidebar {
-            width: 260px;
-            background-color: var(--primary);
-            color: var(--white);
+        /* Container Centralizado */
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
             padding: 2rem;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            position: fixed;
-            height: 100vh;
-            z-index: 100;
+            animation: fadeIn 0.8s ease-out;
+        }
+
+        /* Topo e Logo Centralizados */
+        .header-top {
+            text-align: center;
+            margin-bottom: 3rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid rgba(0,0,0,0.05);
         }
 
         .brand {
-            font-size: 1.5rem;
+            font-size: 2.5rem;
             font-weight: 700;
+            color: var(--primary);
             display: flex;
             align-items: center;
-            gap: 10px;
-            margin-bottom: 3rem;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 1rem;
         }
 
         .brand i { color: var(--accent); }
 
-        .nav-links li {
-            list-style: none;
-            margin-bottom: 1rem;
-        }
-
-        .nav-links a {
-            text-decoration: none;
-            color: rgba(255,255,255,0.7);
-            font-size: 0.95rem;
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            padding: 10px;
-            border-radius: 8px;
-            transition: 0.3s;
-        }
-
-        .nav-links a.active, .nav-links a:hover {
-            background-color: rgba(255,255,255,0.1);
-            color: var(--white);
-            border-left: 4px solid var(--accent);
-        }
-
-        .client-info {
-            background: rgba(255,255,255,0.1);
-            padding: 1rem;
-            border-radius: 12px;
-            margin-top: auto;
-        }
-
-        .client-info h4 { font-size: 0.9rem; margin-bottom: 5px; color: var(--accent); }
-        .client-info p { font-size: 0.8rem; opacity: 0.8; }
-
-        /* Main Content */
-        .main-content {
-            flex: 1;
-            margin-left: 260px;
-            padding: 2rem 3rem;
-            animation: fadeIn 0.8s ease-out;
-        }
-
-        /* Header */
-        header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 2.5rem;
-        }
-
-        .page-title h1 { font-size: 1.8rem; font-weight: 600; color: var(--primary); }
-        .page-title span { color: var(--text-gray); font-size: 0.9rem; }
-
-        .status-badge {
+        .client-info-tag {
+            display: inline-block;
             background: #E3F2FD;
             color: var(--primary);
-            padding: 8px 16px;
-            border-radius: 20px;
-            font-weight: 600;
-            font-size: 0.85rem;
-            display: flex;
-            align-items: center;
-            gap: 8px;
+            padding: 8px 20px;
+            border-radius: 30px;
+            font-size: 0.9rem;
+            font-weight: 500;
         }
 
-        .status-badge::before {
-            content: '';
-            width: 8px;
-            height: 8px;
-            background: var(--accent);
-            border-radius: 50%;
+        .client-info-tag strong {
+            color: var(--accent);
+        }
+
+        /* Títulos de Seção */
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            margin-bottom: 1.5rem;
+        }
+        
+        .section-header h2 {
+            font-size: 1.4rem;
+            color: var(--primary);
+            font-weight: 600;
         }
 
         /* Objective Card */
         .objective-card {
             background: var(--white);
             border-radius: 16px;
-            padding: 2rem;
+            padding: 2.5rem;
             box-shadow: 0 4px 20px rgba(0,0,0,0.03);
-            margin-bottom: 2rem;
-            border-left: 5px solid var(--accent);
+            margin-bottom: 2.5rem;
+            border-left: 6px solid var(--accent);
+            text-align: center;
         }
 
-        .objective-card h2 { font-size: 1.2rem; margin-bottom: 1rem; color: var(--primary); }
-        .objective-card p { line-height: 1.6; color: var(--text-gray); }
+        .objective-card h3 { font-size: 1.2rem; margin-bottom: 1rem; color: var(--primary); }
+        .objective-card p { line-height: 1.8; color: var(--text-gray); font-size: 1.05rem; max-width: 800px; margin: 0 auto; }
 
         /* Services Grid */
         .services-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 1.5rem;
-            margin-bottom: 2rem;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
         }
 
         .service-card {
@@ -162,12 +123,13 @@
             box-shadow: 0 4px 20px rgba(0,0,0,0.03);
             transition: transform 0.3s ease;
             position: relative;
-            overflow: hidden;
+            border-top: 4px solid transparent;
         }
 
         .service-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.08);
+            border-top: 4px solid var(--accent);
         }
 
         .card-header {
@@ -175,36 +137,38 @@
             justify-content: space-between;
             align-items: center;
             margin-bottom: 1.5rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid var(--bg-light);
         }
 
         .icon-box {
             width: 50px;
             height: 50px;
-            background: rgba(10, 35, 66, 0.1);
+            background: rgba(10, 35, 66, 0.08);
             border-radius: 12px;
             display: flex;
             align-items: center;
             justify-content: center;
             color: var(--primary);
-            font-size: 1.2rem;
+            font-size: 1.3rem;
         }
 
         .price-tag {
-            font-size: 1.1rem;
+            font-size: 1.2rem;
             font-weight: 700;
             color: var(--accent);
         }
 
-        .service-title { font-size: 1.1rem; font-weight: 600; color: var(--primary); margin-bottom: 1rem; }
+        .service-title { font-size: 1.1rem; font-weight: 600; color: var(--primary); margin-bottom: 1.2rem; }
         
         .feature-list { list-style: none; }
         .feature-list li {
-            margin-bottom: 0.8rem;
-            font-size: 0.9rem;
+            margin-bottom: 1rem;
+            font-size: 0.95rem;
             color: var(--text-gray);
             display: flex;
             align-items: flex-start;
-            gap: 10px;
+            gap: 12px;
         }
 
         .feature-list li i {
@@ -214,18 +178,18 @@
         }
 
         /* Financial Section */
-        .financial-section {
+        .financial-grid {
             display: grid;
             grid-template-columns: 1fr 2fr;
-            gap: 1.5rem;
-            margin-bottom: 2rem;
+            gap: 2rem;
+            margin-bottom: 3rem;
         }
 
         .investment-card {
             background: var(--primary);
             color: var(--white);
             border-radius: 16px;
-            padding: 2rem;
+            padding: 2.5rem;
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -233,68 +197,60 @@
             text-align: center;
             position: relative;
             overflow: hidden;
+            box-shadow: 0 10px 30px rgba(10, 35, 66, 0.2);
         }
         
-        .investment-card::after {
+        .investment-card::before {
             content: '';
             position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: radial-gradient(circle, rgba(255,255,255,0.05) 0%, transparent 60%);
+            top: 0; left: 0; right: 0; height: 5px;
+            background: var(--accent);
         }
 
-        .investment-card h3 { font-size: 1rem; opacity: 0.8; margin-bottom: 0.5rem; font-weight: 400; }
-        .investment-card .total-price { font-size: 2.5rem; font-weight: 700; color: var(--accent); margin-bottom: 0.5rem; }
-        .investment-card .sub-text { font-size: 0.8rem; opacity: 0.6; }
+        .investment-card h3 { font-size: 1.1rem; opacity: 0.9; margin-bottom: 0.5rem; font-weight: 400; }
+        .investment-card .total-price { font-size: 2.8rem; font-weight: 700; color: var(--accent); margin-bottom: 0.5rem; }
+        .investment-card .sub-text { font-size: 0.9rem; opacity: 0.7; }
 
         .terms-grid {
             background: var(--white);
             border-radius: 16px;
-            padding: 2rem;
+            padding: 2.5rem;
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 2rem;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.03);
         }
 
-        .term-item h4 { font-size: 0.9rem; color: var(--primary); margin-bottom: 0.5rem; display: flex; gap: 8px; align-items: center; }
-        .term-item p { font-size: 0.85rem; color: var(--text-gray); line-height: 1.5; }
+        .term-item h4 { font-size: 0.95rem; color: var(--primary); margin-bottom: 0.8rem; display: flex; gap: 10px; align-items: center; font-weight: 600; }
+        .term-item p { font-size: 0.9rem; color: var(--text-gray); line-height: 1.6; }
 
         /* Action Bar */
         .action-bar {
-            display: flex;
-            justify-content: flex-end;
-            align-items: center;
-            gap: 1.5rem;
-            margin-top: 2rem;
+            text-align: center;
+            margin-top: 3rem;
             padding-top: 2rem;
             border-top: 1px solid var(--border);
         }
 
         .btn {
-            padding: 12px 24px;
+            padding: 12px 28px;
             border-radius: 8px;
             font-weight: 600;
             cursor: pointer;
             transition: 0.3s;
             border: none;
-            font-size: 0.95rem;
+            font-size: 1rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
         }
 
         .btn-outline {
-            background: transparent;
+            background: var(--white);
             border: 2px solid var(--primary);
             color: var(--primary);
         }
-        .btn-outline:hover { background: rgba(10,35,66,0.05); }
-
-        .btn-primary {
-            background: var(--accent);
-            color: var(--white);
-            box-shadow: 0 4px 15px rgba(204, 76, 0, 0.3);
-        }
-        .btn-primary:hover { background: #b34200; transform: translateY(-2px); }
+        .btn-outline:hover { background: var(--primary); color: var(--white); }
 
         /* Animações */
         @keyframes fadeIn {
@@ -303,59 +259,43 @@
         }
 
         /* Responsividade */
-        @media (max-width: 992px) {
-            .sidebar { display: none; }
-            .main-content { margin-left: 0; padding: 1.5rem; }
-            .financial-section { grid-template-columns: 1fr; }
+        @media (max-width: 768px) {
+            .brand { font-size: 1.8rem; }
+            .financial-grid { grid-template-columns: 1fr; }
             .terms-grid { grid-template-columns: 1fr; }
+            .container { padding: 1.5rem; }
         }
     </style>
 </head>
 <body>
 
-    <!-- Sidebar de Navegação -->
-    <nav class="sidebar">
-        <div>
+    <div class="container">
+        
+        <!-- Header Centralizado -->
+        <header class="header-top">
             <div class="brand">
                 <i class="fa-solid fa-chart-line"></i>
-                BRUM INT.
+                BRUM INTELLIGENCE
             </div>
-            <ul class="nav-links">
-                <li><a href="#" class="active"><i class="fa-solid fa-house"></i> Visão Geral</a></li>
-                <li><a href="#services"><i class="fa-solid fa-briefcase"></i> Escopo A & B</a></li>
-                <li><a href="#financial"><i class="fa-solid fa-file-invoice-dollar"></i> Financeiro</a></li>
-                <li><a href="#terms"><i class="fa-solid fa-scale-balanced"></i> Condições</a></li>
-            </ul>
-        </div>
-        <div class="client-info">
-            <h4><i class="fa-solid fa-hotel"></i> Hotel Amsterdam</h4>
-            <p>Montes Claros | MG</p>
-            <p style="margin-top:5px; font-size: 0.7rem;">Validade: 26/11/2025</p>
-        </div>
-    </nav>
-
-    <!-- Conteúdo Principal -->
-    <main class="main-content">
-        
-        <!-- Header Superior -->
-        <header>
-            <div class="page-title">
-                <h1>Proposta de Serviços</h1>
-                <span>Revenue Management & Distribuição Hoteleira</span>
+            <div class="client-info-tag">
+                <i class="fa-solid fa-hotel" style="margin-right:8px"></i>
+                Proposta para: <strong>Hotel Amsterdam - Montes Claros</strong>
             </div>
-            <div class="status-badge">
-                Aguardando Aprovação
-            </div>
+            <p style="margin-top: 10px; font-size: 0.85rem; color: var(--text-gray);">Data: 26/11/2025</p>
         </header>
 
         <!-- Objetivo -->
         <section class="objective-card">
-            <h2><i class="fa-solid fa-bullseye" style="color: var(--accent); margin-right: 10px;"></i> Objetivo do Serviço</h2>
+            <h3>Objetivo do Serviço</h3>
             <p>Implementar estratégias de <strong>Revenue Management</strong> e <strong>Distribuição Hoteleira</strong> com foco em maximizar receita, otimizar canais de venda, melhorar desempenho tarifário e fortalecer a competitividade do hotel no mercado.</p>
         </section>
 
-        <!-- Grid de Serviços -->
-        <section id="services" class="services-grid">
+        <!-- Serviços Grid -->
+        <div class="section-header">
+            <h2>Escopo dos Serviços</h2>
+        </div>
+
+        <section class="services-grid">
             
             <!-- Card Serviço A -->
             <div class="service-card">
@@ -392,21 +332,24 @@
         </section>
 
         <!-- Financeiro e Termos -->
-        <section id="financial" class="financial-section">
+        <div class="section-header">
+            <h2>Investimento & Condições</h2>
+        </div>
+
+        <section class="financial-grid">
             
             <!-- Card de Investimento Total -->
             <div class="investment-card">
-                <h3>Investimento Mensal Total</h3>
+                <h3>Valor Total Mensal</h3>
                 <div class="total-price">R$ 2.000,00</div>
                 <p class="sub-text">Serviços A + B integrados</p>
-                <div style="margin-top: 20px; width: 100px; height: 100px;">
-                     <!-- Mini gráfico simulado via CSS (ou Chart.js abaixo) -->
+                <div style="margin-top: 25px; width: 120px; height: 120px;">
                      <canvas id="budgetChart"></canvas>
                 </div>
             </div>
 
             <!-- Grid de Termos -->
-            <div id="terms" class="terms-grid">
+            <div class="terms-grid">
                 <div class="term-item">
                     <h4><i class="fa-regular fa-calendar-check"></i> Pagamento</h4>
                     <p>Mensal, mediante nota fiscal com vencimento todo dia 30. Reajuste anual (IPCA ou equivalente).</p>
@@ -423,18 +366,17 @@
 
         </section>
 
-        <!-- Barra de Ação -->
+        <!-- Barra de Ação (Apenas Print) -->
         <div class="action-bar">
-            <button class="btn btn-outline" onclick="window.print()"><i class="fa-solid fa-print"></i> Imprimir PDF</button>
-            <button class="btn btn-primary" onclick="alert('Obrigado! A equipe da Brum Intelligence entrará em contato para formalizar o contrato.')">
-                <i class="fa-solid fa-signature"></i> Aprovar Proposta
+            <button class="btn btn-outline" onclick="window.print()">
+                <i class="fa-solid fa-print"></i> Salvar / Imprimir Proposta
             </button>
         </div>
 
-    </main>
+    </div>
 
     <script>
-        // Configuração simples do gráfico Donut para visualização do budget
+        // Configuração do gráfico Donut para visualização do budget
         const ctx = document.getElementById('budgetChart').getContext('2d');
         const budgetChart = new Chart(ctx, {
             type: 'doughnut',
@@ -443,8 +385,8 @@
                 datasets: [{
                     data: [1000, 1000],
                     backgroundColor: [
-                        'rgba(255, 255, 255, 0.4)',
-                        'rgba(255, 255, 255, 0.9)'
+                        'rgba(255, 255, 255, 0.3)',
+                        'rgba(255, 255, 255, 1)'
                     ],
                     borderWidth: 0,
                     hoverOffset: 4
@@ -452,7 +394,7 @@
             },
             options: {
                 plugins: { legend: { display: false }, tooltip: { enabled: false } },
-                cutout: '70%',
+                cutout: '75%',
                 responsive: true,
                 maintainAspectRatio: true
             }
